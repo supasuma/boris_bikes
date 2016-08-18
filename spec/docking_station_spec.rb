@@ -2,9 +2,14 @@ require 'docking_station'
 
 describe DockingStation do
 
-  it 'checks for that a capacity is assigned when creating a new instance' do
+  it 'checks for that a default capacity is assigned when creating a new instance' do
     station = DockingStation.new
     expect(station.instance_variable_get(:@capacity)).to eq(DockingStation::DEFAULT_CAPACITY)
+  end
+
+  it 'checks for that a specified capacity is assigned when creating a new instance' do
+    station = DockingStation.new 25
+    expect(station.instance_variable_get(:@capacity)).to eq(25)
   end
 
   it 'releases working bikes' do
