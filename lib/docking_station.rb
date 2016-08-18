@@ -20,14 +20,10 @@ class DockingStation
 private
 
   def full?
-    if @bikes.length >= 20
-      true
-    end
+    @bikes.length >= 20
   end
 
   def empty?
-    if @bikes.empty?
-      true
-    end
+    @bikes.empty?
   end
 end
