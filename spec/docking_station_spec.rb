@@ -3,8 +3,7 @@ require 'docking_station'
 describe DockingStation do
 
   it 'checks for that a default capacity is assigned when creating a new instance' do
-    station = DockingStation.new
-    expect(station.instance_variable_get(:@capacity)).to eq(DockingStation::DEFAULT_CAPACITY)
+    expect(subject.capacity).to eq(DockingStation::DEFAULT_CAPACITY)
   end
 
   it 'checks for that a specified capacity is assigned when creating a new instance' do
@@ -39,15 +38,15 @@ describe DockingStation do
     end
 
     it 'raises an error when docking station is full' do
-      #stub_const('DockingStation::DEFAULT_CAPACITY')
-      DockingStation::DEFAULT_CAPACITY.times { subject.dock(Bike.new) }
+      subject.capacity.times { subject.dock(Bike.new) }
       expect { subject.dock(Bike.new)}.to raise_error 'Docking station is full'
     end
   end
 
-  it 'returns docked bike' do
-    bike = Bike.new
-    subject.dock(bike)
-    expect(subject.bikes).to eq [bike]
-  end
+  # it 'returns docked bike' do
+  #   bike = Bike.new
+  #   subject.dock(bike)
+  #   expect(subject.bikes).to eq [bike]
+  # end
+
 end
