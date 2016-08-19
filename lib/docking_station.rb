@@ -26,11 +26,6 @@ class DockingStation
     end
   end
 
-  def clear_broken_bikes
-    broken_bikes.clear
-  end
-
-
 private
 
   attr_reader :bikes
