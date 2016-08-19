@@ -2,6 +2,7 @@ require_relative 'bike'
 
 class DockingStation
   attr_reader :capacity
+  attr_reader :broken_bikes
 
   DEFAULT_CAPACITY = 20
 
@@ -25,7 +26,11 @@ class DockingStation
     end
   end
 
-attr_reader :broken_bikes
+  def clear_broken_bikes
+    broken_bikes.clear
+  end
+
+
 private
 
   attr_reader :bikes
