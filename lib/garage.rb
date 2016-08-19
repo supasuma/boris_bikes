@@ -2,6 +2,9 @@ require_relative 'van'
 require_relative 'bike'
 
 class Garage
+
+  attr_reader :fixed_bikes
+  
   def initialize
     @fixed_bikes = []
   end
